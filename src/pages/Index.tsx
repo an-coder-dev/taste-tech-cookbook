@@ -1,13 +1,151 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import Layout from '@/components/Layout';
+import RecipeCard from '@/components/RecipeCard';
+import RecipeFilters from '@/components/RecipeFilters';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
+
+// Sample recipe data with beautiful food images
+const sampleRecipes = [
+  {
+    id: '1',
+    title: 'Grilled Chicken Caesar Salad',
+    description: 'Fresh romaine lettuce with perfectly grilled chicken, parmesan cheese, and homemade caesar dressing.',
+    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800&h=600&fit=crop',
+    cookTime: 25,
+    servings: 4,
+    difficulty: 'Easy' as const,
+    rating: 4.8,
+    cuisine: 'American',
+    calories: 320
+  },
+  {
+    id: '2',
+    title: 'Spaghetti Carbonara',
+    description: 'Classic Italian pasta dish with eggs, cheese, pancetta, and black pepper.',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=800&h=600&fit=crop',
+    cookTime: 20,
+    servings: 2,
+    difficulty: 'Medium' as const,
+    rating: 4.9,
+    cuisine: 'Italian',
+    calories: 580
+  },
+  {
+    id: '3',
+    title: 'Thai Green Curry',
+    description: 'Aromatic and spicy Thai curry with coconut milk, vegetables, and fragrant herbs.',
+    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800&h=600&fit=crop',
+    cookTime: 35,
+    servings: 4,
+    difficulty: 'Medium' as const,
+    rating: 4.7,
+    cuisine: 'Asian',
+    calories: 420
+  },
+  {
+    id: '4',
+    title: 'Beef Tacos',
+    description: 'Seasoned ground beef in soft tortillas with fresh toppings and homemade salsa.',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop',
+    cookTime: 30,
+    servings: 4,
+    difficulty: 'Easy' as const,
+    rating: 4.6,
+    cuisine: 'Mexican',
+    calories: 380
+  },
+  {
+    id: '5',
+    title: 'Mediterranean Salmon',
+    description: 'Baked salmon with herbs, olives, tomatoes, and a drizzle of olive oil.',
+    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&h=600&fit=crop',
+    cookTime: 25,
+    servings: 2,
+    difficulty: 'Easy' as const,
+    rating: 4.8,
+    cuisine: 'Mediterranean',
+    calories: 450
+  },
+  {
+    id: '6',
+    title: 'Butter Chicken',
+    description: 'Rich and creamy Indian curry with tender chicken in a spiced tomato sauce.',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=600&fit=crop',
+    cookTime: 45,
+    servings: 4,
+    difficulty: 'Hard' as const,
+    rating: 4.9,
+    cuisine: 'Indian',
+    calories: 520
+  }
+];
 
 const Index = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedDifficulty, setSelectedDifficulty] = useState('All');
+
+  const filteredRecipes = sampleRecipes.filter(recipe => {
+    const categoryMatch = selectedCategory === 'All' || recipe.cuisine === selectedCategory;
+    const difficultyMatch = selectedDifficulty === 'All' || recipe.difficulty === selectedDifficulty;
+    return categoryMatch && difficultyMatch;
+  });
+
+  const handleRecipeClick = (recipe: typeof sampleRecipes[0]) => {
+    console.log('Clicked recipe:', recipe.title);
+    // This would navigate to recipe detail page
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <Layout>
+      <div className="space-y-6">
+        {/* Hero Section */}
+        <div className="text-center space-y-4 py-8">
+          <h1 className="text-4xl font-bold tracking-tight">
+            Your Personal Recipe Collection
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Discover, organize, and cook amazing meals with our comprehensive recipe management system.
+          </p>
+          <Button size="lg" className="food-gradient text-white">
+            <Plus className="h-5 w-5 mr-2" />
+            Add New Recipe
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          {/* Filters Sidebar */}
+          <div className="lg:col-span-1">
+            <RecipeFilters
+              selectedCategory={selectedCategory}
+              selectedDifficulty={selectedDifficulty}
+              onCategoryChange={setSelectedCategory}
+              onDifficultyChange={setSelectedDifficulty}
+            />
+          </div>
+
+          {/* Recipe Grid */}
+          <div className="lg:col-span-3">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold">
+                {filteredRecipes.length} Recipe{filteredRecipes.length !== 1 ? 's' : ''}
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {filteredRecipes.map((recipe) => (
+                <RecipeCard
+                  key={recipe.id}
+                  recipe={recipe}
+                  onClick={() => handleRecipeClick(recipe)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
