@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import RecipeCard from '@/components/RecipeCard';
@@ -79,6 +78,114 @@ const sampleRecipes = [
     rating: 4.9,
     cuisine: 'Indian',
     calories: 520
+  },
+  {
+    id: '7',
+    title: 'Margherita Pizza',
+    description: 'Classic Italian pizza with fresh tomatoes, mozzarella, and basil on crispy crust.',
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop',
+    cookTime: 40,
+    servings: 3,
+    difficulty: 'Medium' as const,
+    rating: 4.7,
+    cuisine: 'Italian',
+    calories: 480
+  },
+  {
+    id: '8',
+    title: 'Chicken Pad Thai',
+    description: 'Stir-fried rice noodles with chicken, bean sprouts, and tamarind sauce.',
+    image: 'https://images.unsplash.com/photo-1559314809-0f31657dcc5e?w=800&h=600&fit=crop',
+    cookTime: 25,
+    servings: 2,
+    difficulty: 'Medium' as const,
+    rating: 4.6,
+    cuisine: 'Asian',
+    calories: 420
+  },
+  {
+    id: '9',
+    title: 'Greek Salad',
+    description: 'Fresh cucumber, tomatoes, olives, and feta cheese with olive oil dressing.',
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&h=600&fit=crop',
+    cookTime: 10,
+    servings: 4,
+    difficulty: 'Easy' as const,
+    rating: 4.5,
+    cuisine: 'Mediterranean',
+    calories: 220
+  },
+  {
+    id: '10',
+    title: 'Beef Stir Fry',
+    description: 'Tender beef strips with crisp vegetables in a savory soy-based sauce.',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&h=600&fit=crop',
+    cookTime: 20,
+    servings: 3,
+    difficulty: 'Easy' as const,
+    rating: 4.4,
+    cuisine: 'Asian',
+    calories: 380
+  },
+  {
+    id: '11',
+    title: 'Chicken Enchiladas',
+    description: 'Rolled tortillas filled with seasoned chicken and topped with cheese and sauce.',
+    image: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800&h=600&fit=crop',
+    cookTime: 50,
+    servings: 6,
+    difficulty: 'Medium' as const,
+    rating: 4.7,
+    cuisine: 'Mexican',
+    calories: 440
+  },
+  {
+    id: '12',
+    title: 'Mushroom Risotto',
+    description: 'Creamy arborio rice cooked with wild mushrooms and parmesan cheese.',
+    image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&h=600&fit=crop',
+    cookTime: 35,
+    servings: 4,
+    difficulty: 'Hard' as const,
+    rating: 4.8,
+    cuisine: 'Italian',
+    calories: 520
+  },
+  {
+    id: '13',
+    title: 'Chicken Tikka Masala',
+    description: 'Marinated chicken in a rich, creamy tomato-based curry sauce.',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=600&fit=crop',
+    cookTime: 55,
+    servings: 4,
+    difficulty: 'Hard' as const,
+    rating: 4.9,
+    cuisine: 'Indian',
+    calories: 550
+  },
+  {
+    id: '14',
+    title: 'Fish and Chips',
+    description: 'Beer-battered cod with crispy fries and mushy peas.',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop',
+    cookTime: 40,
+    servings: 2,
+    difficulty: 'Medium' as const,
+    rating: 4.3,
+    cuisine: 'American',
+    calories: 680
+  },
+  {
+    id: '15',
+    title: 'Caprese Salad',
+    description: 'Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze.',
+    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=800&h=600&fit=crop',
+    cookTime: 5,
+    servings: 2,
+    difficulty: 'Easy' as const,
+    rating: 4.6,
+    cuisine: 'Italian',
+    calories: 280
   }
 ];
 
