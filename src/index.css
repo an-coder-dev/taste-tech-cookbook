@@ -3,87 +3,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Food-focused color scheme with warm, appetizing colors */
+/* Enhanced food-focused color scheme with warm, appetizing colors */
 
 @layer base {
   :root {
-    --background: 30 15% 98%;
-    --foreground: 25 20% 15%;
+    --background: 28 20% 97%;
+    --foreground: 20 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 20% 15%;
+    --card-foreground: 20 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 20% 15%;
+    --popover-foreground: 20 25% 12%;
 
-    --primary: 25 95% 53%;
+    --primary: 16 95% 58%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 30 30% 94%;
-    --secondary-foreground: 25 20% 15%;
+    --secondary: 28 35% 92%;
+    --secondary-foreground: 20 25% 12%;
 
-    --muted: 30 30% 94%;
-    --muted-foreground: 25 15% 45%;
+    --muted: 28 35% 92%;
+    --muted-foreground: 20 20% 45%;
 
-    --accent: 28 75% 85%;
-    --accent-foreground: 25 20% 15%;
+    --accent: 25 85% 88%;
+    --accent-foreground: 20 25% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 25% 88%;
-    --input: 30 25% 88%;
-    --ring: 25 95% 53%;
+    --border: 28 30% 85%;
+    --input: 28 30% 85%;
+    --ring: 16 95% 58%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 30 15% 98%;
-    --sidebar-foreground: 25 20% 15%;
-    --sidebar-primary: 25 95% 53%;
+    --sidebar-background: 28 20% 97%;
+    --sidebar-foreground: 20 25% 12%;
+    --sidebar-primary: 16 95% 58%;
     --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 30 30% 94%;
-    --sidebar-accent-foreground: 25 20% 15%;
-    --sidebar-border: 30 25% 88%;
-    --sidebar-ring: 25 95% 53%;
+    --sidebar-accent: 28 35% 92%;
+    --sidebar-accent-foreground: 20 25% 12%;
+    --sidebar-border: 28 30% 85%;
+    --sidebar-ring: 16 95% 58%;
   }
 
   .dark {
-    --background: 25 20% 8%;
-    --foreground: 30 15% 92%;
+    --background: 20 25% 6%;
+    --foreground: 28 20% 95%;
 
-    --card: 25 20% 12%;
-    --card-foreground: 30 15% 92%;
+    --card: 20 25% 10%;
+    --card-foreground: 28 20% 95%;
 
-    --popover: 25 20% 12%;
-    --popover-foreground: 30 15% 92%;
+    --popover: 20 25% 10%;
+    --popover-foreground: 28 20% 95%;
 
-    --primary: 25 95% 53%;
-    --primary-foreground: 25 20% 8%;
+    --primary: 16 95% 58%;
+    --primary-foreground: 20 25% 6%;
 
-    --secondary: 25 15% 18%;
-    --secondary-foreground: 30 15% 92%;
+    --secondary: 20 20% 15%;
+    --secondary-foreground: 28 20% 95%;
 
-    --muted: 25 15% 18%;
-    --muted-foreground: 30 10% 65%;
+    --muted: 20 20% 15%;
+    --muted-foreground: 28 15% 68%;
 
-    --accent: 25 15% 18%;
-    --accent-foreground: 30 15% 92%;
+    --accent: 20 20% 15%;
+    --accent-foreground: 28 20% 95%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 25 15% 18%;
-    --input: 25 15% 18%;
-    --ring: 25 95% 53%;
+    --border: 20 20% 15%;
+    --input: 20 20% 15%;
+    --ring: 16 95% 58%;
     
-    --sidebar-background: 25 20% 8%;
-    --sidebar-foreground: 30 15% 92%;
-    --sidebar-primary: 25 95% 53%;
-    --sidebar-primary-foreground: 25 20% 8%;
-    --sidebar-accent: 25 15% 18%;
-    --sidebar-accent-foreground: 30 15% 92%;
-    --sidebar-border: 25 15% 18%;
-    --sidebar-ring: 25 95% 53%;
+    --sidebar-background: 20 25% 6%;
+    --sidebar-foreground: 28 20% 95%;
+    --sidebar-primary: 16 95% 58%;
+    --sidebar-primary-foreground: 20 25% 6%;
+    --sidebar-accent: 20 20% 15%;
+    --sidebar-accent-foreground: 28 20% 95%;
+    --sidebar-border: 20 20% 15%;
+    --sidebar-ring: 16 95% 58%;
   }
 }
 
@@ -97,13 +97,26 @@
   }
 }
 
-/* Custom animations for food app */
+/* Enhanced animations and effects for food app */
 @layer utilities {
   .recipe-card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:scale-105;
+    @apply transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-1;
   }
   
   .food-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(25 85% 60%) 100%);
+    background: linear-gradient(135deg, hsl(16 95% 58%) 0%, hsl(25 90% 65%) 50%, hsl(35 85% 70%) 100%);
+  }
+
+  .appetizing-gradient {
+    background: linear-gradient(135deg, hsl(16 95% 58%) 0%, hsl(28 85% 60%) 100%);
+  }
+
+  .video-overlay {
+    background: linear-gradient(45deg, rgba(251, 146, 60, 0.9) 0%, rgba(249, 115, 22, 0.9) 100%);
+  }
+
+  .hunger-glow {
+    box-shadow: 0 0 20px rgba(251, 146, 60, 0.3), 0 0 40px rgba(249, 115, 22, 0.2);
   }
 }
+

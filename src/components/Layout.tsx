@@ -12,14 +12,14 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg food-gradient flex items-center justify-center">
+              <div className="h-8 w-8 rounded-lg appetizing-gradient flex items-center justify-center shadow-md">
                 <Book className="h-4 w-4 text-white" />
               </div>
-              <span className="text-xl font-bold">TasteTech</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">TasteTech</span>
             </Link>
           </div>
           
@@ -29,7 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
               <input
                 type="search"
                 placeholder="Search recipes and drinks..."
-                className="h-9 w-64 rounded-md border border-input bg-background pl-9 pr-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                className="h-9 w-64 rounded-md border border-input bg-background pl-9 pr-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
               />
             </div>
             <button className="md:hidden p-2 rounded-md hover:bg-muted">
@@ -48,22 +48,22 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-muted/50 mt-12">
+      <footer className="border-t bg-gradient-to-r from-orange-50 to-red-50 mt-12">
         <div className="container py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <div className="h-6 w-6 rounded food-gradient flex items-center justify-center">
+                <div className="h-6 w-6 rounded appetizing-gradient flex items-center justify-center">
                   <Book className="h-3 w-3 text-white" />
                 </div>
-                <span className="font-semibold">TasteTech</span>
+                <span className="font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">TasteTech</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Your personal recipe and meal planning companion.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-3">Features</h4>
+              <h4 className="font-medium mb-3 text-orange-700">Features</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Recipe Collection</li>
                 <li>Meal Planning</li>
@@ -72,7 +72,7 @@ const Layout = ({ children }: LayoutProps) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-3">Categories</h4>
+              <h4 className="font-medium mb-3 text-orange-700">Categories</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Quick Meals</li>
                 <li>Healthy Options</li>
@@ -81,7 +81,7 @@ const Layout = ({ children }: LayoutProps) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-3">Support</h4>
+              <h4 className="font-medium mb-3 text-orange-700">Support</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Help Center</li>
                 <li>Contact Us</li>
@@ -100,3 +100,4 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 export default Layout;
+

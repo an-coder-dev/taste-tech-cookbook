@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import RecipeCard from '@/components/RecipeCard';
 import RecipeFilters from '@/components/RecipeFilters';
+import VideoHero from '@/components/VideoHero';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 
@@ -207,15 +209,23 @@ const Index = () => {
   return (
     <Layout>
       <div className="space-y-6">
+        {/* Video Hero Section */}
+        <VideoHero
+          title="Master the Art of Cooking"
+          subtitle="Watch professional chefs create amazing dishes step by step. Get inspired and learn new techniques."
+          videoUrl="https://cdn.coverr.co/videos/coverr-cooking-pasta-in-a-pan-4047/1080p.mp4"
+          type="recipe"
+        />
+
         {/* Hero Section */}
-        <div className="text-center space-y-4 py-8">
-          <h1 className="text-4xl font-bold tracking-tight">
+        <div className="text-center space-y-4 py-6">
+          <h2 className="text-3xl font-bold tracking-tight">
             Your Personal Recipe Collection
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover, organize, and cook amazing meals with our comprehensive recipe management system.
           </p>
-          <Button size="lg" className="food-gradient text-white">
+          <Button size="lg" className="appetizing-gradient text-white shadow-lg hover:shadow-xl transition-all duration-300">
             <Plus className="h-5 w-5 mr-2" />
             Add New Recipe
           </Button>
@@ -235,9 +245,9 @@ const Index = () => {
           {/* Recipe Grid */}
           <div className="lg:col-span-3">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold">
+              <h3 className="text-2xl font-bold">
                 {filteredRecipes.length} Recipe{filteredRecipes.length !== 1 ? 's' : ''}
-              </h2>
+              </h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -257,3 +267,4 @@ const Index = () => {
 };
 
 export default Index;
+
