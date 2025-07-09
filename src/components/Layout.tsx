@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Book, Search, Menu } from 'lucide-react';
 import Navigation from './Navigation';
+import { ThemeToggle } from './ThemeToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center space-x-2">
@@ -32,6 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
                 className="h-9 w-64 rounded-md border border-input bg-background pl-9 pr-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
               />
             </div>
+            <ThemeToggle />
             <button className="md:hidden p-2 rounded-md hover:bg-muted">
               <Menu className="h-5 w-5" />
             </button>
@@ -48,7 +50,7 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-gradient-to-r from-orange-50 to-red-50 mt-12">
+      <footer className="border-t bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 mt-12">
         <div className="container py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-3">
@@ -63,7 +65,7 @@ const Layout = ({ children }: LayoutProps) => {
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-3 text-orange-700">Features</h4>
+              <h4 className="font-medium mb-3 text-orange-700 dark:text-orange-400">Features</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Recipe Collection</li>
                 <li>Meal Planning</li>
@@ -72,7 +74,7 @@ const Layout = ({ children }: LayoutProps) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-3 text-orange-700">Categories</h4>
+              <h4 className="font-medium mb-3 text-orange-700 dark:text-orange-400">Categories</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Quick Meals</li>
                 <li>Healthy Options</li>
@@ -81,7 +83,7 @@ const Layout = ({ children }: LayoutProps) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-3 text-orange-700">Support</h4>
+              <h4 className="font-medium mb-3 text-orange-700 dark:text-orange-400">Support</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Help Center</li>
                 <li>Contact Us</li>
@@ -100,4 +102,3 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 export default Layout;
-

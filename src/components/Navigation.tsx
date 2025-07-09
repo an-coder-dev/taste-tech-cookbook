@@ -15,7 +15,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="border-b bg-white/95 backdrop-blur-sm sticky top-16 z-40">
+    <nav className="border-b bg-background/95 backdrop-blur-sm sticky top-16 z-40">
       <div className="container">
         <div className="flex space-x-8 overflow-x-auto">
           {navigation.map((item) => {
